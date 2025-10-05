@@ -29,23 +29,25 @@ def send_push(title, message, config):
     """Sendet Push-Benachrichtigung via ntfy.sh"""
     topic = config.get('ntfy_topic', 'vplan_monitor')
     
+    # Entferne alle Nicht-ASCII Zeichen aus Title
+    title_clean = title.encode('ascii', 'ignore').decode('ascii')
+    
     try:
         response = requests.post(
             f"https://ntfy.sh/{topic}",
             data=message.encode('utf-8'),
             headers={
-                "Title": title.encode('utf-8').decode('utf-8'),
+                "Title": title_clean,
                 "Priority": "high",
-                "Tags": "school,calendar",
-                "Content-Type": "text/plain; charset=utf-8"
+                "Tags": "school,calendar"
             }
         )
         if response.status_code == 200:
-            print(f"✅ Push gesendet: {title}")
+            print(f"Push gesendet: {title}")
         else:
-            print(f"⚠️ Push-Fehler: Status {response.status_code}")
+            print(f"Push-Fehler: Status {response.status_code}")
     except Exception as e:
-        print(f"❌ Fehler beim Senden: {e}")
+        print(f"Fehler beim Senden: {e}")
 
 def get_next_schooldays(days=5):
     """Gibt die nächsten X Schultage zurück (Mo-Fr)"""
