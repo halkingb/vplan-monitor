@@ -34,9 +34,10 @@ def send_push(title, message, config):
             f"https://ntfy.sh/{topic}",
             data=message.encode('utf-8'),
             headers={
-                "Title": title,
+                "Title": title.encode('utf-8').decode('utf-8'),
                 "Priority": "high",
-                "Tags": "school,calendar"
+                "Tags": "school,calendar",
+                "Content-Type": "text/plain; charset=utf-8"
             }
         )
         if response.status_code == 200:
@@ -137,7 +138,7 @@ def format_entry(entry, date):
     if entry['raum_neu']:
         msg += f" in {entry['raum_neu']}"
     if entry['fuer_lehrer']:
-        msg += f" (für {entry['fuer_lehrer']})"
+        msg += f" (fuer {entry['fuer_lehrer']})"
     if entry['info']:
         msg += f" [{entry['info']}]"
     
@@ -164,7 +165,7 @@ def main():
     last_hash = None
     
     # Startup-Benachrichtigung
-    send_push("✅ Monitor gestartet", f"Überwache Plan für {teacher_short}", config)
+    send_push("Monitor gestartet", f"Ueberwache Plan fuer {teacher_short}", config)
     
     while True:
         try:
@@ -207,23 +208,23 @@ def main():
                         date_obj = datetime.strptime(date_str, "%d.%m.%Y")
                         for entry in entries:
                             msg += format_entry(entry, date_obj) + "\n"
-                    send_push("📋 Vertretungsplan Status", msg, config)
+                    send_push("Vertretungsplan Status", msg, config)
                 else:
-                    send_push("✅ Status", "Keine Vertretungen gefunden", config)
+                    send_push("Status", "Keine Vertretungen gefunden", config)
             
             elif current_hash != last_hash:
                 # Änderung erkannt!
                 print("\n🔔 ÄNDERUNG ERKANNT!")
                 
                 if not all_entries:
-                    send_push("✅ Plan aktualisiert", "Alle Vertretungen entfernt!", config)
+                    send_push("Plan aktualisiert", "Alle Vertretungen entfernt!", config)
                 else:
                     msg = f"{total_count} Vertretung(en):\n\n"
                     for date_str, entries in sorted(all_entries.items()):
                         date_obj = datetime.strptime(date_str, "%d.%m.%Y")
                         for entry in entries:
                             msg += format_entry(entry, date_obj) + "\n"
-                    send_push("🔔 Plan geändert!", msg, config)
+                    send_push("PLAN GEAENDERT!", msg, config)
                 
                 last_hash = current_hash
             else:
@@ -235,7 +236,7 @@ def main():
             
         except KeyboardInterrupt:
             print("\n\n👋 Monitor wird beendet...")
-            send_push("⏸️ Monitor gestoppt", "Überwachung beendet", config)
+            send_push("Monitor gestoppt", "Ueberwachung beendet", config)
             break
         except Exception as e:
             print(f"❌ Fehler: {e}")
