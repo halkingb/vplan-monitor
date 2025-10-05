@@ -63,7 +63,7 @@ def date_to_filename(date):
     """Konvertiert Datum zu XML-Dateiname: 20251001"""
     return date.strftime("%Y%m%d")
 
-def fetch_vplan_xml(base_url, password, date):
+def fetch_vplan_xml(base_url, username, password, date):
     """Ruft XML-Vertretungsplan für ein bestimmtes Datum ab"""
     filename = date_to_filename(date)
     url = f"{base_url}vdaten/VplanLe{filename}.xml"
@@ -71,8 +71,8 @@ def fetch_vplan_xml(base_url, password, date):
     try:
         session = requests.Session()
         
-        # Login mit Passwort (als Cookie oder Basic Auth)
-        response = session.get(url, auth=('', password), timeout=10)
+        # Login mit Username und Passwort (Basic Auth)
+        response = session.get(url, auth=(username, password), timeout=10)
         
         if response.status_code == 404:
             return None  # Keine Daten für diesen Tag
@@ -149,6 +149,7 @@ def main():
     
     teacher_short = config['teacher_short']
     base_url = config['vplan_url']
+    username = config['username']
     password = config['password']
     check_interval = config.get('check_interval', 600)
     days_ahead = config.get('days_ahead', 5)
@@ -179,7 +180,7 @@ def main():
                 date_str = date.strftime("%d.%m.%Y")
                 print(f"  📅 Prüfe {date_str}...", end=" ")
                 
-                xml_content = fetch_vplan_xml(base_url, password, date)
+                xml_content = fetch_vplan_xml(base_url, username, password, date)
                 
                 if xml_content:
                     entries = parse_vplan_xml(xml_content, teacher_short)
