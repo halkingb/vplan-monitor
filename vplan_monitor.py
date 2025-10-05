@@ -18,7 +18,7 @@ CONFIG_FILE = "config.json"
 def load_config():
     """Lädt die Konfiguration aus config.json"""
     if not os.path.exists(CONFIG_FILE):
-        print("❌ Fehler: config.json nicht gefunden!")
+        print("Fehler: config.json nicht gefunden!")
         print("Bitte erstelle die config.json Datei mit deinen Zugangsdaten.")
         exit(1)
     
@@ -81,12 +81,12 @@ def fetch_vplan_xml(base_url, username, password, date):
             return None  # Keine Daten für diesen Tag
         
         if response.status_code != 200:
-            print(f"⚠️ Fehler beim Abrufen von {url}: Status {response.status_code}")
+            print(f"Warnung beim Abrufen von {url}: Status {response.status_code}")
             return None
         
         return response.text
     except Exception as e:
-        print(f"❌ Fehler beim Abrufen von {url}: {e}")
+        print(f"Fehler beim Abrufen von {url}: {e}")
         return None
 
 def parse_vplan_xml(xml_content, teacher_short):
@@ -122,7 +122,7 @@ def parse_vplan_xml(xml_content, teacher_short):
         
         return entries
     except ET.ParseError as e:
-        print(f"❌ XML Parse-Fehler: {e}")
+        print(f"XML Parse-Fehler: {e}")
         return []
 
 def create_hash(all_entries):
@@ -157,11 +157,11 @@ def main():
     check_interval = config.get('check_interval', 600)
     days_ahead = config.get('days_ahead', 5)
     
-    print(f"🚀 Vertretungsplan Monitor gestartet")
-    print(f"👨‍🏫 Überwache Lehrer: {teacher_short}")
-    print(f"📅 Tage voraus: {days_ahead}")
-    print(f"⏱️  Check-Intervall: {check_interval} Sekunden")
-    print(f"📱 Push-Topic: {config.get('ntfy_topic', 'vplan_monitor')}")
+    print(f"Vertretungsplan Monitor gestartet")
+    print(f"Ueberwache Lehrer: {teacher_short}")
+    print(f"Tage voraus: {days_ahead}")
+    print(f"Check-Intervall: {check_interval} Sekunden")
+    print(f"Push-Topic: {config.get('ntfy_topic', 'vplan_monitor')}")
     print("-" * 60)
     
     last_hash = None
@@ -181,7 +181,7 @@ def main():
             # Prüfe jeden Schultag
             for date in schooldays:
                 date_str = date.strftime("%d.%m.%Y")
-                print(f"  📅 Prüfe {date_str}...", end=" ")
+                print(f"  Pruefe {date_str}...", end=" ")
                 
                 xml_content = fetch_vplan_xml(base_url, username, password, date)
                 
@@ -189,16 +189,16 @@ def main():
                     entries = parse_vplan_xml(xml_content, teacher_short)
                     if entries:
                         all_entries[date_str] = entries
-                        print(f"✓ {len(entries)} Vertretung(en)")
+                        print(f"OK {len(entries)} Vertretung(en)")
                     else:
-                        print("✓ keine Vertretungen")
+                        print("OK keine Vertretungen")
                 else:
                     print("- keine Daten")
             
             # Hash berechnen
             current_hash = create_hash(all_entries)
             total_count = sum(len(v) for v in all_entries.values())
-            print(f"\n📊 Gesamt: {total_count} Vertretung(en) an {len(all_entries)} Tag(en)")
+            print(f"\nGesamt: {total_count} Vertretung(en) an {len(all_entries)} Tag(en)")
             
             # Prüfe auf Änderungen
             if last_hash is None:
@@ -216,7 +216,7 @@ def main():
             
             elif current_hash != last_hash:
                 # Änderung erkannt!
-                print("\n🔔 ÄNDERUNG ERKANNT!")
+                print("\nAENDERUNG ERKANNT!")
                 
                 if not all_entries:
                     send_push("Plan aktualisiert", "Alle Vertretungen entfernt!", config)
@@ -230,18 +230,18 @@ def main():
                 
                 last_hash = current_hash
             else:
-                print("✓ Keine Änderungen")
+                print("OK Keine Aenderungen")
             
             # Warte bis zum nächsten Check
-            print(f"\n⏳ Nächster Check in {check_interval // 60} Minuten...")
+            print(f"\nNaechster Check in {check_interval // 60} Minuten...")
             time.sleep(check_interval)
             
         except KeyboardInterrupt:
-            print("\n\n👋 Monitor wird beendet...")
+            print("\n\nMonitor wird beendet...")
             send_push("Monitor gestoppt", "Ueberwachung beendet", config)
             break
         except Exception as e:
-            print(f"❌ Fehler: {e}")
+            print(f"Fehler: {e}")
             time.sleep(check_interval)
 
 if __name__ == "__main__":
