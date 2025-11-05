@@ -2,18 +2,18 @@
 """
 Vertretungsplan Monitor für iOS Push-Benachrichtigungen
 Überwacht Stundenplan24.de XML-Dateien auf Änderungen
+Optimiert für GitHub Actions (speichert Status persistent)
 """
 
 import requests
 import xml.etree.ElementTree as ET
 import json
-import time
-import hashlib
-from datetime import datetime, timedelta
 import os
+from datetime import datetime, timedelta
 
 # Konfiguration laden
 CONFIG_FILE = "config.json"
+STATUS_FILE = "last_status.json"
 
 def load_config():
     """Lädt die Konfiguration aus config.json"""
@@ -24,6 +24,24 @@ def load_config():
     
     with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
         return json.load(f)
+
+def load_last_status():
+    """Lädt den letzten Status aus Datei"""
+    if os.path.exists(STATUS_FILE):
+        try:
+            with open(STATUS_FILE, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except:
+            return None
+    return None
+
+def save_status(all_entries):
+    """Speichert den aktuellen Status in Datei"""
+    with open(STATUS_FILE, 'w', encoding='utf-8') as f:
+        json.dump({
+            'timestamp': datetime.now().isoformat(),
+            'entries': all_entries
+        }, f, indent=2, ensure_ascii=False)
 
 def send_push(title, message, config):
     """Sendet Push-Benachrichtigung via ntfy.sh"""
@@ -125,11 +143,6 @@ def parse_vplan_xml(xml_content, teacher_short):
         print(f"XML Parse-Fehler: {e}")
         return []
 
-def create_hash(all_entries):
-    """Erstellt einen Hash aus allen Einträgen zur Änderungserkennung"""
-    data = json.dumps(all_entries, sort_keys=True)
-    return hashlib.md5(data.encode()).hexdigest()
-
 def format_entry(entry, date):
     """Formatiert einen Eintrag für die Push-Nachricht"""
     weekday = date.strftime("%a, %d.%m")
@@ -147,102 +160,83 @@ def format_entry(entry, date):
     return msg
 
 def main():
-    """Hauptfunktion"""
+    """Hauptfunktion - optimiert für GitHub Actions"""
     config = load_config()
     
     teacher_short = config['teacher_short']
     base_url = config['vplan_url']
     username = config['username']
     password = config['password']
-    check_interval = config.get('check_interval', 900)  # 15 Minuten
     days_ahead = config.get('days_ahead', 5)
     
-    print(f"Vertretungsplan Monitor gestartet")
+    print(f"Vertretungsplan Monitor (GitHub Actions)")
     print(f"Ueberwache Lehrer: {teacher_short}")
     print(f"Tage voraus: {days_ahead}")
-    print(f"Check-Intervall: {check_interval} Sekunden")
     print(f"Push-Topic: {config.get('ntfy_topic', 'vplan_monitor')}")
     print("-" * 60)
     
-    last_hash = None
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"\n[{now}] Pruefe Vertretungsplaene...")
     
-    # Startup-Benachrichtigung
-    send_push("Monitor gestartet", f"Ueberwache Plan fuer {teacher_short}", config)
+    # Hole nächste Schultage
+    schooldays = get_next_schooldays(days_ahead)
+    all_entries = {}
     
-    while True:
-        try:
-            now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            print(f"\n[{now}] Pruefe Vertretungsplaene...")
-            
-            # Hole nächste Schultage
-            schooldays = get_next_schooldays(days_ahead)
-            all_entries = {}
-            
-            # Prüfe jeden Schultag
-            for date in schooldays:
-                date_str = date.strftime("%d.%m.%Y")
-                print(f"  Pruefe {date_str}...", end=" ")
-                
-                xml_content = fetch_vplan_xml(base_url, username, password, date)
-                
-                if xml_content:
-                    entries = parse_vplan_xml(xml_content, teacher_short)
-                    if entries:
-                        all_entries[date_str] = entries
-                        print(f"OK {len(entries)} Vertretung(en)")
-                    else:
-                        print("OK keine Vertretungen")
-                else:
-                    print("- keine Daten")
-            
-            # Hash berechnen
-            current_hash = create_hash(all_entries)
-            total_count = sum(len(v) for v in all_entries.values())
-            print(f"\nGesamt: {total_count} Vertretung(en) an {len(all_entries)} Tag(en)")
-            
-            # Prüfe auf Änderungen
-            if last_hash is None:
-                # Erster Durchlauf - nur Status, keine "Änderung"
-                last_hash = current_hash
-                if all_entries:
-                    msg = f"Aktuell {total_count} Vertretung(en):\n\n"
-                    for date_str, entries in sorted(all_entries.items()):
-                        date_obj = datetime.strptime(date_str, "%d.%m.%Y")
-                        for entry in entries:
-                            msg += format_entry(entry, date_obj) + "\n"
-                    send_push("Vertretungsplan Status", msg, config)
-                else:
-                    send_push("Status", "Keine Vertretungen gefunden", config)
-            
-            elif current_hash != last_hash:
-                # Änderung erkannt!
-                print("\nAENDERUNG ERKANNT!")
-                
-                if not all_entries:
-                    send_push("Plan aktualisiert", "Alle Vertretungen entfernt!", config)
-                else:
-                    msg = f"{total_count} Vertretung(en):\n\n"
-                    for date_str, entries in sorted(all_entries.items()):
-                        date_obj = datetime.strptime(date_str, "%d.%m.%Y")
-                        for entry in entries:
-                            msg += format_entry(entry, date_obj) + "\n"
-                    send_push("PLAN GEAENDERT!", msg, config)
-                
-                last_hash = current_hash
+    # Prüfe jeden Schultag
+    for date in schooldays:
+        date_str = date.strftime("%d.%m.%Y")
+        print(f"  Pruefe {date_str}...", end=" ")
+        
+        xml_content = fetch_vplan_xml(base_url, username, password, date)
+        
+        if xml_content:
+            entries = parse_vplan_xml(xml_content, teacher_short)
+            if entries:
+                all_entries[date_str] = entries
+                print(f"OK {len(entries)} Vertretung(en)")
             else:
-                print("OK Keine Aenderungen")
-            
-            # Warte bis zum nächsten Check
-            print(f"\nNaechster Check in {check_interval // 60} Minuten...")
-            time.sleep(check_interval)
-            
-        except KeyboardInterrupt:
-            print("\n\nMonitor wird beendet...")
-            send_push("Monitor gestoppt", "Ueberwachung beendet", config)
-            break
-        except Exception as e:
-            print(f"Fehler: {e}")
-            time.sleep(check_interval)
+                print("OK keine Vertretungen")
+        else:
+            print("- keine Daten")
+    
+    total_count = sum(len(v) for v in all_entries.values())
+    print(f"\nGesamt: {total_count} Vertretung(en) an {len(all_entries)} Tag(en)")
+    
+    # Lade letzten Status
+    last_status = load_last_status()
+    
+    # Vergleiche mit letztem Status
+    if last_status is None:
+        # Erster Durchlauf überhaupt
+        print("Erster Durchlauf - speichere initialen Status")
+        save_status(all_entries)
+        
+        if all_entries:
+            msg = f"Aktuell {total_count} Vertretung(en):\n\n"
+            for date_str, entries in sorted(all_entries.items()):
+                date_obj = datetime.strptime(date_str, "%d.%m.%Y")
+                for entry in entries:
+                    msg += format_entry(entry, date_obj) + "\n"
+            send_push("Monitor gestartet", msg, config)
+        else:
+            send_push("Monitor gestartet", "Keine Vertretungen gefunden", config)
+    
+    elif all_entries != last_status.get('entries', {}):
+        # Änderung erkannt!
+        print("\nAENDERUNG ERKANNT!")
+        save_status(all_entries)
+        
+        if not all_entries:
+            send_push("Plan aktualisiert", "Alle Vertretungen entfernt!", config)
+        else:
+            msg = f"{total_count} Vertretung(en):\n\n"
+            for date_str, entries in sorted(all_entries.items()):
+                date_obj = datetime.strptime(date_str, "%d.%m.%Y")
+                for entry in entries:
+                    msg += format_entry(entry, date_obj) + "\n"
+            send_push("PLAN GEAENDERT!", msg, config)
+    else:
+        print("OK Keine Aenderungen")
 
 if __name__ == "__main__":
     main()
