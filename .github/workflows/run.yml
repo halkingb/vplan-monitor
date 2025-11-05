@@ -26,4 +26,4 @@ jobs:
         env:
           NTFY_URL: ${{ secrets.NTFY_URL }}
           VPLAN_URL: ${{ secrets.VPLAN_URL }}
-        run: python vplan.py
+        run: python vplan_monitor.py
