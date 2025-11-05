@@ -1,0 +1,29 @@
+name: Run vplan monitor
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"  # alle 15 Minuten
+  workflow_dispatch:          # erlaubt manuelles Starten
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run script
+        env:
+          NTFY_URL: ${{ secrets.NTFY_URL }}
+          VPLAN_URL: ${{ secrets.VPLAN_URL }}
+        run: python vplan.py
