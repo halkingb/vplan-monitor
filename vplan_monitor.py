@@ -154,7 +154,7 @@ def main():
     base_url = config['vplan_url']
     username = config['username']
     password = config['password']
-    check_interval = config.get('check_interval', 600)
+    check_interval = config.get('check_interval', 900)  # 15 Minuten
     days_ahead = config.get('days_ahead', 5)
     
     print(f"Vertretungsplan Monitor gestartet")
@@ -172,7 +172,7 @@ def main():
     while True:
         try:
             now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            print(f"\n[{now}] Prüfe Vertretungspläne...")
+            print(f"\n[{now}] Pruefe Vertretungsplaene...")
             
             # Hole nächste Schultage
             schooldays = get_next_schooldays(days_ahead)
@@ -199,33 +199,10 @@ def main():
             current_hash = create_hash(all_entries)
             total_count = sum(len(v) for v in all_entries.values())
             print(f"\nGesamt: {total_count} Vertretung(en) an {len(all_entries)} Tag(en)")
-
-    # === Status-Tracking: Verhindert doppelte Pushs ===
-    STATUS_FILE = "last_status.json"
-
-    # bisherigen Hash laden, falls vorhanden
-    if os.path.exists(STATUS_FILE):
-        with open(STATUS_FILE, "r", encoding="utf-8") as f:
-            last_status = f.read().strip()
-    else:
-        last_status = ""
-
-    # Vergleich: Wenn gleich, dann abbrechen
-    if hash_value == last_status:
-        print("Keine Änderungen im Vertretungsplan – kein Push nötig.")
-        time.sleep(check_interval)
-        continue  # nächste Runde im while True-Loop
-
-    # Wenn sich etwas geändert hat, neuen Hash speichern
-    with open(STATUS_FILE, "w", encoding="utf-8") as f:
-        f.write(hash_value)
-
-    print("Änderungen erkannt – Push wird gesendet...")
-
             
             # Prüfe auf Änderungen
             if last_hash is None:
-                # Erster Durchlauf
+                # Erster Durchlauf - nur Status, keine "Änderung"
                 last_hash = current_hash
                 if all_entries:
                     msg = f"Aktuell {total_count} Vertretung(en):\n\n"
