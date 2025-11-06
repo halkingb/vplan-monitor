@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-11-06T15:12:35.413691",
+  "entries": {
+    "07.11.2025": [
+      {
+        "lehrer": "Hal",
+        "stunde": "5-6",
+        "klasse": "Q2/ EN3",
+        "fach_neu": "EN",
+        "raum_neu": "K8b",
+        "fuer_fach": "EN",
+        "fuer_lehrer": "Hal",
+        "info": null,
+        "geaendert": false
+      }
+    ]
+  }
+}
