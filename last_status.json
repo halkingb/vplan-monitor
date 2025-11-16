@@ -1,4 +1,18 @@
 {
-  "timestamp": "2025-11-08T01:47:42.284998",
-  "entries": {}
+  "timestamp": "2025-11-16T13:52:13.606155",
+  "entries": {
+    "21.11.2025": [
+      {
+        "lehrer": "Hal",
+        "stunde": "1-4",
+        "klasse": "10b",
+        "fach_neu": "EN",
+        "raum_neu": "K11b",
+        "fuer_fach": null,
+        "fuer_lehrer": null,
+        "info": "Sprechprüfung En 10b",
+        "geaendert": true
+      }
+    ]
+  }
 }
