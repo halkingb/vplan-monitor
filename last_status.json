@@ -1,19 +1,6 @@
 {
-  "timestamp": "2025-11-17T16:34:02.499622",
+  "timestamp": "2025-11-19T01:54:36.258328",
   "entries": {
-    "18.11.2025": [
-      {
-        "lehrer": "Hal",
-        "stunde": "1-2",
-        "klasse": "10a",
-        "fach_neu": "MA",
-        "raum_neu": "K10a",
-        "fuer_fach": "MA",
-        "fuer_lehrer": "Du",
-        "info": "Aufgaben Du",
-        "geaendert": true
-      }
-    ],
     "21.11.2025": [
       {
         "lehrer": "Hal",
