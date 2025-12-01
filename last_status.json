@@ -1,4 +1,18 @@
 {
-  "timestamp": "2025-11-22T01:49:58.009475",
-  "entries": {}
+  "timestamp": "2025-12-01T11:24:33.677404",
+  "entries": {
+    "05.12.2025": [
+      {
+        "lehrer": "Hal",
+        "stunde": "4",
+        "klasse": "5b",
+        "fach_neu": "EnFö",
+        "raum_neu": "K5a",
+        "fuer_fach": "EnFö",
+        "fuer_lehrer": "Hal",
+        "info": null,
+        "geaendert": false
+      }
+    ]
+  }
 }
