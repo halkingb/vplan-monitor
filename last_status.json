@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-07T15:00:33.784836",
+  "timestamp": "2026-01-08T21:29:56.817203",
   "entries": {
     "08.01.2026": [
       {
@@ -11,19 +11,6 @@
         "fuer_fach": "EN",
         "fuer_lehrer": "Hal",
         "info": "Sprechprüfung EN1 in Ark",
-        "geaendert": false
-      }
-    ],
-    "09.01.2026": [
-      {
-        "lehrer": "Hal",
-        "stunde": "4",
-        "klasse": "5b",
-        "fach_neu": "EnFö",
-        "raum_neu": "Men",
-        "fuer_fach": "EnFö",
-        "fuer_lehrer": "Hal",
-        "info": null,
         "geaendert": false
       }
     ]
