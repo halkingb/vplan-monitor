@@ -1,18 +1,4 @@
 {
-  "timestamp": "2026-01-08T21:29:56.817203",
-  "entries": {
-    "08.01.2026": [
-      {
-        "lehrer": "Hal",
-        "stunde": "1-2",
-        "klasse": "Q1/ EN1",
-        "fach_neu": "EN",
-        "raum_neu": "Uto",
-        "fuer_fach": "EN",
-        "fuer_lehrer": "Hal",
-        "info": "Sprechprüfung EN1 in Ark",
-        "geaendert": false
-      }
-    ]
-  }
+  "timestamp": "2026-01-09T02:06:38.672013",
+  "entries": {}
 }
