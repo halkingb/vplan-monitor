@@ -1,4 +1,55 @@
 {
-  "timestamp": "2026-01-14T02:11:31.996653",
-  "entries": {}
+  "timestamp": "2026-01-25T14:26:34.676097",
+  "entries": {
+    "26.01.2026": [
+      {
+        "lehrer": "Hal",
+        "stunde": "7",
+        "klasse": "6b",
+        "fach_neu": "Sil",
+        "raum_neu": "K6b",
+        "fuer_fach": "Sil",
+        "fuer_lehrer": "Ve",
+        "info": null,
+        "geaendert": true
+      },
+      {
+        "lehrer": "Hal",
+        "stunde": "8",
+        "klasse": "6b",
+        "fach_neu": "EN",
+        "raum_neu": "K6b",
+        "fuer_fach": "EN",
+        "fuer_lehrer": "Ve",
+        "info": null,
+        "geaendert": true
+      }
+    ],
+    "27.01.2026": [
+      {
+        "lehrer": "Hal",
+        "stunde": "1-2",
+        "klasse": "9a",
+        "fach_neu": "DE",
+        "raum_neu": "K9a",
+        "fuer_fach": "DE",
+        "fuer_lehrer": "Pr",
+        "info": null,
+        "geaendert": true
+      }
+    ],
+    "30.01.2026": [
+      {
+        "lehrer": "Hal",
+        "stunde": "5-6",
+        "klasse": "Q2/ EN3",
+        "fach_neu": "EN",
+        "raum_neu": "K11b",
+        "fuer_fach": "EN",
+        "fuer_lehrer": "Hal",
+        "info": null,
+        "geaendert": false
+      }
+    ]
+  }
 }
