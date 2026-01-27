@@ -1,30 +1,6 @@
 {
-  "timestamp": "2026-01-25T14:26:34.676097",
+  "timestamp": "2026-01-27T02:20:45.683714",
   "entries": {
-    "26.01.2026": [
-      {
-        "lehrer": "Hal",
-        "stunde": "7",
-        "klasse": "6b",
-        "fach_neu": "Sil",
-        "raum_neu": "K6b",
-        "fuer_fach": "Sil",
-        "fuer_lehrer": "Ve",
-        "info": null,
-        "geaendert": true
-      },
-      {
-        "lehrer": "Hal",
-        "stunde": "8",
-        "klasse": "6b",
-        "fach_neu": "EN",
-        "raum_neu": "K6b",
-        "fuer_fach": "EN",
-        "fuer_lehrer": "Ve",
-        "info": null,
-        "geaendert": true
-      }
-    ],
     "27.01.2026": [
       {
         "lehrer": "Hal",
