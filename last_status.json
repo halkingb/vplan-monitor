@@ -1,19 +1,6 @@
 {
-  "timestamp": "2026-01-27T02:20:45.683714",
+  "timestamp": "2026-01-28T02:09:26.018875",
   "entries": {
-    "27.01.2026": [
-      {
-        "lehrer": "Hal",
-        "stunde": "1-2",
-        "klasse": "9a",
-        "fach_neu": "DE",
-        "raum_neu": "K9a",
-        "fuer_fach": "DE",
-        "fuer_lehrer": "Pr",
-        "info": null,
-        "geaendert": true
-      }
-    ],
     "30.01.2026": [
       {
         "lehrer": "Hal",
