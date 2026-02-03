@@ -1,4 +1,18 @@
 {
-  "timestamp": "2026-01-31T02:42:31.885821",
-  "entries": {}
+  "timestamp": "2026-02-03T18:35:53.428925",
+  "entries": {
+    "05.02.2026": [
+      {
+        "lehrer": "Hal",
+        "stunde": "7-8",
+        "klasse": "7b",
+        "fach_neu": "EN",
+        "raum_neu": "Brc",
+        "fuer_fach": "EN",
+        "fuer_lehrer": "Hal",
+        "info": null,
+        "geaendert": false
+      }
+    ]
+  }
 }
