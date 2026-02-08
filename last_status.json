@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-08T17:59:19.645980",
+  "timestamp": "2026-02-08T18:51:38.335030",
   "entries": {
     "09.02.2026": [
       {
@@ -34,6 +34,43 @@
         "fuer_lehrer": "Hal",
         "info": null,
         "geaendert": false
+      }
+    ],
+    "11.02.2026": [
+      {
+        "lehrer": "Hal",
+        "stunde": "1-2",
+        "klasse": "9a,9b",
+        "fach_neu": "EP",
+        "raum_neu": "K9a",
+        "fuer_fach": "EP",
+        "fuer_lehrer": "Gb",
+        "info": null,
+        "geaendert": true
+      }
+    ],
+    "13.02.2026": [
+      {
+        "lehrer": "Hal",
+        "stunde": "1",
+        "klasse": "Q2",
+        "fach_neu": "EN",
+        "raum_neu": "K8a",
+        "fuer_fach": null,
+        "fuer_lehrer": null,
+        "info": "Vorabi Hörverstehen",
+        "geaendert": true
+      },
+      {
+        "lehrer": "Hal",
+        "stunde": "3-4",
+        "klasse": "Q2",
+        "fach_neu": null,
+        "raum_neu": "K9b",
+        "fuer_fach": null,
+        "fuer_lehrer": null,
+        "info": "Vorabi Klausuraufsicht",
+        "geaendert": true
       }
     ]
   }
