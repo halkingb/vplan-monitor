@@ -1,41 +1,6 @@
 {
-  "timestamp": "2026-02-08T18:51:38.335030",
+  "timestamp": "2026-02-10T01:04:30.063755",
   "entries": {
-    "09.02.2026": [
-      {
-        "lehrer": "Hal",
-        "stunde": "1-2",
-        "klasse": "7a,7b",
-        "fach_neu": "LA",
-        "raum_neu": "Brc",
-        "fuer_fach": "LA",
-        "fuer_lehrer": "Hal",
-        "info": null,
-        "geaendert": false
-      },
-      {
-        "lehrer": "Hal",
-        "stunde": "5",
-        "klasse": "7b",
-        "fach_neu": "Sil",
-        "raum_neu": "Brc",
-        "fuer_fach": "Sil",
-        "fuer_lehrer": "Hal",
-        "info": null,
-        "geaendert": false
-      },
-      {
-        "lehrer": "Hal",
-        "stunde": "6",
-        "klasse": "7b",
-        "fach_neu": "EN",
-        "raum_neu": "Brc",
-        "fuer_fach": "EN",
-        "fuer_lehrer": "Hal",
-        "info": null,
-        "geaendert": false
-      }
-    ],
     "11.02.2026": [
       {
         "lehrer": "Hal",
