@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-10T01:04:30.063755",
+  "timestamp": "2026-02-11T19:44:22.575219",
   "entries": {
     "11.02.2026": [
       {
@@ -35,6 +35,17 @@
         "fuer_fach": null,
         "fuer_lehrer": null,
         "info": "Vorabi Klausuraufsicht",
+        "geaendert": true
+      },
+      {
+        "lehrer": "Hal",
+        "stunde": "5-6",
+        "klasse": "5b",
+        "fach_neu": "EN",
+        "raum_neu": "K5b",
+        "fuer_fach": "EN",
+        "fuer_lehrer": "Dr",
+        "info": null,
         "geaendert": true
       }
     ]
