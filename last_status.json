@@ -1,19 +1,6 @@
 {
-  "timestamp": "2026-02-11T19:44:22.575219",
+  "timestamp": "2026-02-12T02:44:23.213100",
   "entries": {
-    "11.02.2026": [
-      {
-        "lehrer": "Hal",
-        "stunde": "1-2",
-        "klasse": "9a,9b",
-        "fach_neu": "EP",
-        "raum_neu": "K9a",
-        "fuer_fach": "EP",
-        "fuer_lehrer": "Gb",
-        "info": null,
-        "geaendert": true
-      }
-    ],
     "13.02.2026": [
       {
         "lehrer": "Hal",
