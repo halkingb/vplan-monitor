@@ -1,19 +1,6 @@
 {
-  "timestamp": "2026-02-12T06:06:33.621310",
+  "timestamp": "2026-02-12T08:03:51.831954",
   "entries": {
-    "12.02.2026": [
-      {
-        "lehrer": "Hal",
-        "stunde": "7-8",
-        "klasse": "7b",
-        "fach_neu": "EN",
-        "raum_neu": "K7b",
-        "fuer_fach": "CH",
-        "fuer_lehrer": "Du",
-        "info": null,
-        "geaendert": true
-      }
-    ],
     "13.02.2026": [
       {
         "lehrer": "Hal",
