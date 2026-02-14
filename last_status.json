@@ -1,40 +1,4 @@
 {
-  "timestamp": "2026-02-12T08:03:51.831954",
-  "entries": {
-    "13.02.2026": [
-      {
-        "lehrer": "Hal",
-        "stunde": "1",
-        "klasse": "Q2",
-        "fach_neu": "EN",
-        "raum_neu": "K8a",
-        "fuer_fach": null,
-        "fuer_lehrer": null,
-        "info": "Vorabi Hörverstehen",
-        "geaendert": true
-      },
-      {
-        "lehrer": "Hal",
-        "stunde": "3-4",
-        "klasse": "Q2",
-        "fach_neu": null,
-        "raum_neu": "K9b",
-        "fuer_fach": null,
-        "fuer_lehrer": null,
-        "info": "Vorabi Klausuraufsicht",
-        "geaendert": true
-      },
-      {
-        "lehrer": "Hal",
-        "stunde": "5-6",
-        "klasse": "5b",
-        "fach_neu": "EN",
-        "raum_neu": "K5b",
-        "fuer_fach": "EN",
-        "fuer_lehrer": "Dr",
-        "info": null,
-        "geaendert": true
-      }
-    ]
-  }
+  "timestamp": "2026-02-14T02:31:49.948998",
+  "entries": {}
 }
