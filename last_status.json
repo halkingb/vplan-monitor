@@ -1,4 +1,18 @@
 {
-  "timestamp": "2026-02-18T02:40:55.471908",
-  "entries": {}
+  "timestamp": "2026-02-19T10:58:13.132148",
+  "entries": {
+    "19.02.2026": [
+      {
+        "lehrer": "Hal",
+        "stunde": "1",
+        "klasse": "Q2",
+        "fach_neu": "EN",
+        "raum_neu": null,
+        "fuer_fach": null,
+        "fuer_lehrer": null,
+        "info": "Vorabitur Hörverstehen",
+        "geaendert": true
+      }
+    ]
+  }
 }
