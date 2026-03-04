@@ -1,29 +1,4 @@
 {
-  "timestamp": "2026-03-01T17:38:44.026009",
-  "entries": {
-    "03.03.2026": [
-      {
-        "lehrer": "Hal",
-        "stunde": "1-2",
-        "klasse": "7a,7b",
-        "fach_neu": "LA",
-        "raum_neu": "K9b",
-        "fuer_fach": "LA",
-        "fuer_lehrer": "Hal",
-        "info": null,
-        "geaendert": false
-      },
-      {
-        "lehrer": "Hal",
-        "stunde": "7-8",
-        "klasse": "7b",
-        "fach_neu": "EN",
-        "raum_neu": "K6b",
-        "fuer_fach": "EN",
-        "fuer_lehrer": "Hal",
-        "info": null,
-        "geaendert": false
-      }
-    ]
-  }
+  "timestamp": "2026-03-04T02:46:57.790456",
+  "entries": {}
 }
