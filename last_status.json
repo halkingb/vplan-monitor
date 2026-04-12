@@ -1,4 +1,42 @@
 {
-  "timestamp": "2026-04-11T02:43:47.270288",
-  "entries": {}
+  "timestamp": "2026-04-12T18:24:42.413459",
+  "entries": {
+    "14.04.2026": [
+      {
+        "lehrer": "Hal",
+        "stunde": "1-2",
+        "klasse": "7a,7b",
+        "fach_neu": "LA",
+        "raum_neu": "Brc",
+        "fuer_fach": "LA",
+        "fuer_lehrer": "Hal",
+        "info": null,
+        "geaendert": false
+      },
+      {
+        "lehrer": "Hal",
+        "stunde": "7-8",
+        "klasse": "7b",
+        "fach_neu": "EN",
+        "raum_neu": "K9b",
+        "fuer_fach": "EN",
+        "fuer_lehrer": "Hal",
+        "info": null,
+        "geaendert": false
+      }
+    ],
+    "17.04.2026": [
+      {
+        "lehrer": "Hal",
+        "stunde": "5-6",
+        "klasse": "9b",
+        "fach_neu": "GE",
+        "raum_neu": "K9b",
+        "fuer_fach": "GE",
+        "fuer_lehrer": "Ju",
+        "info": null,
+        "geaendert": true
+      }
+    ]
+  }
 }
