@@ -1,18 +1,4 @@
 {
-  "timestamp": "2026-04-15T00:09:41.227352",
-  "entries": {
-    "17.04.2026": [
-      {
-        "lehrer": "Hal",
-        "stunde": "5-6",
-        "klasse": "9b",
-        "fach_neu": "GE",
-        "raum_neu": "K9b",
-        "fuer_fach": "GE",
-        "fuer_lehrer": "Ju",
-        "info": null,
-        "geaendert": true
-      }
-    ]
-  }
+  "timestamp": "2026-04-18T01:03:44.605519",
+  "entries": {}
 }
