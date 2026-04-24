@@ -1,4 +1,29 @@
 {
-  "timestamp": "2026-04-18T01:03:44.605519",
-  "entries": {}
+  "timestamp": "2026-04-24T08:24:02.737577",
+  "entries": {
+    "24.04.2026": [
+      {
+        "lehrer": "Hal",
+        "stunde": "5",
+        "klasse": "7a",
+        "fach_neu": "Sil",
+        "raum_neu": "Brc",
+        "fuer_fach": "Sil",
+        "fuer_lehrer": "Cs",
+        "info": null,
+        "geaendert": true
+      },
+      {
+        "lehrer": "Hal",
+        "stunde": "6",
+        "klasse": "7a",
+        "fach_neu": "CH",
+        "raum_neu": "Brc",
+        "fuer_fach": "CH",
+        "fuer_lehrer": "Cs",
+        "info": null,
+        "geaendert": true
+      }
+    ]
+  }
 }
