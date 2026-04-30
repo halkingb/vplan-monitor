@@ -1,19 +1,6 @@
 {
-  "timestamp": "2026-04-29T01:25:12.255077",
+  "timestamp": "2026-04-30T01:23:44.325939",
   "entries": {
-    "29.04.2026": [
-      {
-        "lehrer": "Hal",
-        "stunde": "3-4",
-        "klasse": "7a,7b",
-        "fach_neu": "LA",
-        "raum_neu": "Uto",
-        "fuer_fach": "LA",
-        "fuer_lehrer": "Hal",
-        "info": null,
-        "geaendert": false
-      }
-    ],
     "30.04.2026": [
       {
         "lehrer": "Hal",
