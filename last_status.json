@@ -1,29 +1,4 @@
 {
-  "timestamp": "2026-04-30T01:23:44.325939",
-  "entries": {
-    "30.04.2026": [
-      {
-        "lehrer": "Hal",
-        "stunde": "1",
-        "klasse": "Q2",
-        "fach_neu": "EN",
-        "raum_neu": "K9b",
-        "fuer_fach": null,
-        "fuer_lehrer": null,
-        "info": "Abitur Hörverstehen",
-        "geaendert": true
-      },
-      {
-        "lehrer": "Hal",
-        "stunde": "7-8",
-        "klasse": "7b",
-        "fach_neu": "EN",
-        "raum_neu": "K11b",
-        "fuer_fach": "EN",
-        "fuer_lehrer": "Hal",
-        "info": null,
-        "geaendert": false
-      }
-    ]
-  }
+  "timestamp": "2026-05-01T00:07:49.145199",
+  "entries": {}
 }
