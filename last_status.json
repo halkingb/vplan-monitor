@@ -1,4 +1,18 @@
 {
-  "timestamp": "2026-05-01T00:07:49.145199",
-  "entries": {}
+  "timestamp": "2026-05-03T11:52:24.065460",
+  "entries": {
+    "05.05.2026": [
+      {
+        "lehrer": "Hal",
+        "stunde": "7-8",
+        "klasse": "6a,6b",
+        "fach_neu": "DS",
+        "raum_neu": "Sha",
+        "fuer_fach": "DS",
+        "fuer_lehrer": "Vo",
+        "info": null,
+        "geaendert": true
+      }
+    ]
+  }
 }
