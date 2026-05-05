@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-03T11:52:24.065460",
+  "timestamp": "2026-05-05T17:52:03.838305",
   "entries": {
     "05.05.2026": [
       {
@@ -10,6 +10,19 @@
         "raum_neu": "Sha",
         "fuer_fach": "DS",
         "fuer_lehrer": "Vo",
+        "info": null,
+        "geaendert": true
+      }
+    ],
+    "06.05.2026": [
+      {
+        "lehrer": "Hal",
+        "stunde": "3-4",
+        "klasse": "10b",
+        "fach_neu": "PO",
+        "raum_neu": "K10b",
+        "fuer_fach": "PO",
+        "fuer_lehrer": "Sc",
         "info": null,
         "geaendert": true
       }
