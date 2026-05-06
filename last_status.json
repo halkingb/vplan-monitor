@@ -1,19 +1,6 @@
 {
-  "timestamp": "2026-05-05T17:52:03.838305",
+  "timestamp": "2026-05-06T03:56:50.558755",
   "entries": {
-    "05.05.2026": [
-      {
-        "lehrer": "Hal",
-        "stunde": "7-8",
-        "klasse": "6a,6b",
-        "fach_neu": "DS",
-        "raum_neu": "Sha",
-        "fuer_fach": "DS",
-        "fuer_lehrer": "Vo",
-        "info": null,
-        "geaendert": true
-      }
-    ],
     "06.05.2026": [
       {
         "lehrer": "Hal",
