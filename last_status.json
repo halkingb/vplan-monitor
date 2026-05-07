@@ -1,18 +1,4 @@
 {
-  "timestamp": "2026-05-06T03:56:50.558755",
-  "entries": {
-    "06.05.2026": [
-      {
-        "lehrer": "Hal",
-        "stunde": "3-4",
-        "klasse": "10b",
-        "fach_neu": "PO",
-        "raum_neu": "K10b",
-        "fuer_fach": "PO",
-        "fuer_lehrer": "Sc",
-        "info": null,
-        "geaendert": true
-      }
-    ]
-  }
+  "timestamp": "2026-05-07T00:05:49.029247",
+  "entries": {}
 }
