@@ -1,17 +1,17 @@
 {
-  "timestamp": "2026-05-31T16:14:53.056439",
+  "timestamp": "2026-05-31T20:14:18.598105",
   "entries": {
     "05.06.2026": [
       {
         "lehrer": "Hal",
         "stunde": "3-4",
-        "klasse": "7b",
+        "klasse": "8a",
         "fach_neu": "EN",
-        "raum_neu": "Brc",
-        "fuer_fach": "EN",
-        "fuer_lehrer": "Hal",
-        "info": null,
-        "geaendert": false
+        "raum_neu": "K7b",
+        "fuer_fach": null,
+        "fuer_lehrer": null,
+        "info": "Sprechprüfung En 8a",
+        "geaendert": true
       },
       {
         "lehrer": "Hal",
