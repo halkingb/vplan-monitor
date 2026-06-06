@@ -1,40 +1,4 @@
 {
-  "timestamp": "2026-06-04T10:25:35.147316",
-  "entries": {
-    "05.06.2026": [
-      {
-        "lehrer": "Hal",
-        "stunde": "1-2",
-        "klasse": "8a",
-        "fach_neu": "EN",
-        "raum_neu": "K7b",
-        "fuer_fach": null,
-        "fuer_lehrer": null,
-        "info": "Sprechprüfung En 8a",
-        "geaendert": true
-      },
-      {
-        "lehrer": "Hal",
-        "stunde": "3-4",
-        "klasse": "8a",
-        "fach_neu": "EN",
-        "raum_neu": "K7b",
-        "fuer_fach": null,
-        "fuer_lehrer": null,
-        "info": "Sprechprüfung En 8a",
-        "geaendert": true
-      },
-      {
-        "lehrer": "Hal",
-        "stunde": "5-6",
-        "klasse": "8a",
-        "fach_neu": "EN",
-        "raum_neu": "K7b",
-        "fuer_fach": null,
-        "fuer_lehrer": null,
-        "info": "Sprechprüfung En 8a",
-        "geaendert": true
-      }
-    ]
-  }
+  "timestamp": "2026-06-06T03:57:16.757956",
+  "entries": {}
 }
