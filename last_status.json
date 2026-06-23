@@ -1,4 +1,18 @@
 {
-  "timestamp": "2026-06-20T01:29:32.351730",
-  "entries": {}
+  "timestamp": "2026-06-23T15:53:38.308938",
+  "entries": {
+    "25.06.2026": [
+      {
+        "lehrer": "Hal",
+        "stunde": "1-2",
+        "klasse": "5b",
+        "fach_neu": "EN",
+        "raum_neu": "K5b",
+        "fuer_fach": "EN",
+        "fuer_lehrer": "Dr",
+        "info": null,
+        "geaendert": true
+      }
+    ]
+  }
 }
