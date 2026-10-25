@@ -1,4 +1,31 @@
 {
-  "timestamp": "2026-09-22T01:13:30.325018",
-  "entries": {}
+  "timestamp": "2026-10-25T17:31:06.171331",
+  "entries": {
+    "28.10.2026": [
+      {
+        "lehrer": "Hal",
+        "stunde": "1-2",
+        "klasse": "Q1/ EN4",
+        "fach_neu": "EN",
+        "raum_neu": "Uto",
+        "fuer_fach": "EN",
+        "fuer_lehrer": "Hal",
+        "info": null,
+        "geaendert": false
+      }
+    ],
+    "29.10.2026": [
+      {
+        "lehrer": "Hal",
+        "stunde": "5-6",
+        "klasse": "Q1,Q2/ la1",
+        "fach_neu": "LA",
+        "raum_neu": "Oly",
+        "fuer_fach": "LA",
+        "fuer_lehrer": "Hal",
+        "info": "BO im Olymp",
+        "geaendert": false
+      }
+    ]
+  }
 }
