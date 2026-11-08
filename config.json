@@ -3,7 +3,7 @@
   "vplan_url": "https://www.stundenplan24.de/53006251/vplanle/",
   "username": "lehrer",
   "password": "Lp1833425",
-  "ntfy_topic": "vplan_hal_monitor",
+  "ntfy_topic": "vplan_hal_monitor_2025",
   "check_interval": 600,
   "days_ahead": 5
 }
