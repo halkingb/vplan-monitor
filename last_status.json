@@ -1,18 +1,4 @@
 {
-  "timestamp": "2026-11-08T13:10:16.721291",
-  "entries": {
-    "13.11.2026": [
-      {
-        "lehrer": "Hal",
-        "stunde": "1-2",
-        "klasse": "8b",
-        "fach_neu": "MA",
-        "raum_neu": "K8b",
-        "fuer_fach": "MA",
-        "fuer_lehrer": "Re",
-        "info": null,
-        "geaendert": true
-      }
-    ]
-  }
+  "timestamp": "2026-11-14T02:37:13.054111",
+  "entries": {}
 }
