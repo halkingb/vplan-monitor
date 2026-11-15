@@ -1,4 +1,18 @@
 {
-  "timestamp": "2026-11-14T02:37:13.054111",
-  "entries": {}
+  "timestamp": "2026-11-15T20:13:53.940614",
+  "entries": {
+    "18.11.2026": [
+      {
+        "lehrer": "Hal",
+        "stunde": "3-4",
+        "klasse": "Q1",
+        "fach_neu": "EN",
+        "raum_neu": "Brc",
+        "fuer_fach": null,
+        "fuer_lehrer": null,
+        "info": "Sprechprüfung En Q1",
+        "geaendert": true
+      }
+    ]
+  }
 }
