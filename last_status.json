@@ -1,18 +1,4 @@
 {
-  "timestamp": "2026-11-25T03:40:37.408102",
-  "entries": {
-    "25.11.2026": [
-      {
-        "lehrer": "Hal",
-        "stunde": "1-2",
-        "klasse": "Q1/ EN4",
-        "fach_neu": "EN",
-        "raum_neu": "K10a",
-        "fuer_fach": "EN",
-        "fuer_lehrer": "Hal",
-        "info": null,
-        "geaendert": false
-      }
-    ]
-  }
+  "timestamp": "2026-11-26T04:47:31.585455",
+  "entries": {}
 }
